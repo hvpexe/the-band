@@ -41,4 +41,21 @@ task lists
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
 - [x] list syntax required (any unordered or ordered list supported)
 - [x] this is a complete item
-- [ ] this is an imcomplete item
+- [ ] this is an imcomplete 
+
+```javasript
+function test() {
+    console.log("look ma`, no spaces");
+}
+```
+
+Table
+First header | Second header
+-------------|---------------------
+content cell 1 | content cell 2
+content column 1 | content column 2
+
+emoji
+github supports emoji!
+:+1: :sparkles: :camel: :tada:
+:rocket: :metal: :octocat:
