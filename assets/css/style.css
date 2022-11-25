@@ -64,6 +64,10 @@ html {
     margin-top: 16px !important;
 }
 
+.mt-32 {
+    margin-top: 32px !important;
+}
+
 .text-center {
     text-align: center !important;
 }
@@ -80,6 +84,7 @@ html {
     background-color: #000;
     text-decoration: none;
     padding: 11px 16px;
+    appearance: none;
 }
 
 .btn:hover {
@@ -125,7 +130,7 @@ html {
 }
 
 #nav li a {
-    display: inline-block;
+    display: block;
     text-decoration: none;
     line-height: 46px;
     padding: 0px 24px;
@@ -160,16 +165,31 @@ html {
     font-size: 14px;
 }
 
-#header .mobile-menu-btn, 
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 21px;
 }
 
-#header .mobile-menu-btn:hover, 
+
 #header .search-btn:hover {
     background-color: #f44336;
     cursor: pointer;
+}
+
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon {
+    color: #000;
 }
 
 #header .menu-icon,
@@ -184,7 +204,7 @@ html {
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background: url('/assets/img/chicago.jpg') top center / cover no-repeat;
+    background: url('../img/chicago.jpg') top center / cover no-repeat;
 }
 
 #slider .text-content {
@@ -195,6 +215,7 @@ html {
     transform: translateX(-50%); */
     width: 100%;
     text-align: center;
+
 }
 
 #slider .text-heading {
@@ -205,6 +226,7 @@ html {
 #slider .text-description {
     font-size: 20px;
     margin: 25px 0;
+    text-shadow: 0 0 1px #000;
 }
 
 #content {}
@@ -239,7 +261,7 @@ html {
 }
 
 #content .member-list {
-    margin-top: 48px;
+    margin-top: 32px;
 }
 
 #content .member-name {
@@ -291,7 +313,7 @@ html {
 
 /* Places */
 .places-list {
-    margin-top: 32px;
+    margin-top: 16px;
 }
 
 .place-img {
@@ -339,6 +361,13 @@ html {
     display: inline-block;
 }
 
+.contact-info a {
+    color: #333;
+    opacity: 0.8;
+}
+.contact-info a:hover {
+    opacity: 1;
+}
 .contact-form {
     font-size: 15px;
 }
@@ -493,13 +522,89 @@ html {
     }
 }
 
+/* tablet and mobile */
+@media (max-width: 63.9375em) {
+    .btn {
+        padding: 15px 16px;
+    }
+
+    .contact-form .form-control {
+        padding: 15px;
+    }
+
+    .contact-info {
+        line-height: 2;
+    }
+
+    .social-list {
+        font-size: 48px;
+    }
+
+    #footer .social-list a {
+        margin: 0 8px;
+    }
+
+    #footer .copyright a {
+        padding: 12px 0;
+        display: inline-block;
+    }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {}
+
 /* mobile */
-@media (max-width: 740px) {
+@media (max-width: 46.1875em) {
+
+    .s-full-width,
+    .s-col-full {
+        width: 100% !important;
+    }
+
+    .s-mt-8 {
+        margin-top: 8px !important;
+    }
+
+    #header {
+        overflow: hidden;
+    }
+
     #header .search-btn {
-        /* height: inherit; */
         display: none;
     }
+
+    #header .mobile-menu-btn {
+        display: block;
+    }
+
+    #nav {
+        display: block;
+    }
+
     #nav>li {
         display: block;
+    }
+
+    #nav>li:first-child {
+        display: inline-block;
+
+    }
+
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding: 5px 40px;
+    }
+
+    #content .member-img {
+        width: 60%;
+    }
+
+    .contact-form {
+        margin-top: 16px;
     }
 }
